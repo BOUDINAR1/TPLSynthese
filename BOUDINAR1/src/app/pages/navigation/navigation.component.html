@@ -1,0 +1,19 @@
+<nav class="sidenav">
+    <ul>
+      @if (isLoggedIn){
+        <li class="username">Bienvenue, {{ username }}!</li>
+      }
+      <li><button class="btn bg-body-secondary" routerLink="/accueil" routerLinkActive="active">Accueil</button></li>
+      @if (!isLoggedIn){
+      <li><button class="btn bg-body-secondary" routerLink="/login" routerLinkActive="active">Login</button></li>
+      }
+      @if (isLoggedIn){
+      <li><button class="btn bg-body-secondary" routerLink="/capture" routerLinkActive="active">Capture</button></li>
+      <li><button class="btn bg-body-secondary" routerLink="/messages" routerLinkActive="active">Messages
+        <span class="badge">{{ nbMessages }}</span>
+      </button></li>
+      <li><button class="btn bg-body-secondary" (click)="logout()">Logout</button></li>
+
+      }
+    </ul>
+</nav>

@@ -1,0 +1,21 @@
+<form>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="usernameLogin" name="username" [(ngModel)]="username" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="passwordLogin" name="password" [(ngModel)]="password" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-outline-primary mt-3" (click)="login()">Login</button>
+    </div>
+  </form>
+
+  
+<div>
+    <button type="button" class="btn btn-outline-secondary mt-3" (click)="recupererUsername()"  >Recuperer Username par /secret</button>
+</div>
+<div>
+    <p>{{ usernameSecret }}</p>
+</div>

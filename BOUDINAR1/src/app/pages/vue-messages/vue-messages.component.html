@@ -1,0 +1,43 @@
+<p>vue-messages works!</p>
+
+<div>
+    <button type="submit" class="btn btn-outline-primary mt-3" (click)="recupererMessages()">Console Log Messages</button>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-outline-primary mt-3" (click)="postMessage()">Console Log Envoyer Message</button>
+  </div>
+
+  @if (messages$ | async; as data) {
+    @for (msg of data; track msg.id) {
+      <div class="alert alert-info m-4">
+        <!-- Utilisateur ou 'Anonyme' -->
+        <div class="d-flex justify-content-between">
+          <strong>{{ msg.userid ? msg.userid : 'Anonyme' }}</strong>
+          <!-- Date/heure courtes -->
+          <span>{{ msg.date.value | date:'short' }}</span>
+        </div>
+        <p>{{ msg.message }}</p>
+        <div class="d-flex justify-content-between">
+        <!-- Contenu du message -->
+        
+            <div>
+              @if (canDelete(msg)) {
+                <button class="btn btn-danger"
+                        (click)="deleteMessage(msg.id)">
+                  Effacer
+                </button>
+              } 
+            </div>
+          
+    
+          <!-- Étoiles -->
+          <p>Étoiles : {{ msg.rating }}</p>
+        </div>
+      </div>
+      <!-- Icône de poubelle si autorisé -->
+      
+    
+    }
+  }
+  

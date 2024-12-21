@@ -1,0 +1,41 @@
+<p>capture works!</p>
+
+
+<form>
+    <div>
+      <label for="username">Description POST:</label>
+      <input type="text" id="descriptionPOST" name="description" [(ngModel)]="descriptionPOST" required>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-outline-secondary mt-3" (click)="lancerActivite(descriptionPOST)">Lancer activite post /activite</button>
+    </div>
+   
+  </form>
+
+
+  
+<div>
+    <button type="button" class="btn btn-outline-secondary mt-3" (click)="recupererActiviteCourante()">Recuperer activite courante get /activite</button>
+</div>
+
+
+<div>
+    <button type="button" class="btn btn-outline-secondary mt-3" (click)="recupererActivites()">Recuperer activites get /activites</button>
+</div>
+
+<div>
+    <button type="button" class="btn btn-outline-secondary mt-3" (click)="arreterActivite()">Arreter activite courante delete /activite</button>
+</div>
+
+<form>
+    <div>
+      <label for="username">Description PUT:</label>
+      <input type="text" id="descriptionPUT" name="description" [(ngModel)]="descriptionPUT" required>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-outline-secondary mt-3" (click)="putActivite(descriptionPUT)">Enregistrer activite put /activite</button>
+    </div>
+   
+  </form>
